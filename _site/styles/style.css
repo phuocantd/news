@@ -1,0 +1,17 @@
+#share-social a {
+    color: white;
+}
+#nav-menu a:hover {
+    text-decoration: red;
+    color: red;
+}
+#menu ul li.nav-item {
+    width: 100px;
+    margin: 10px;
+    margin-bottom: 5px;
+}
+#menu ul li.nav-item.search-bar {
+    width: 250px;
+    margin: 10px;
+    margin-left: 30px;
+}

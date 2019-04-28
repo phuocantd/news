@@ -1,37 +1,94 @@
-<header class="bg-dark text-light d-flex justify-content-center px-0">
-    <div id="weather" class="mx-2 d-flex no-wrap">
-        <i class="fas fa-clouds mx-2"></i>
-        <p id="temperature" class="mx-2">15*C</p>
-        <p id="location">HCM city</p>
-    </div>
-    <div id="date" class="mx-2">
-        <p id="currentDate">Monday, April 22</p>
-    </div>
-    <div class="mx-4">
-        <a class="mx-2" href="/loginForm/">Signin/Join</a>
-        <a class="mx-2" href="#">Blog</a>
-        <a class="mx-2" href="#">Forums</a>
-        <a class="mx-2" href="#">Contact</a>
-    </div>
-    <div id="share">
-        <i class="fab fa-facebook-f mx-2"></i>
-        <i class="fab fa-twitter mx-2"></i>
-        <i class="fab fa-youtube mx-2"></i>
+<header class="bg-dark text-light d-flex justify-content-center align-items-center px-0 py-2">
+    <div class="row" style="width: 90%">
+        <div class="col-9 d-flex justify-content-end">
+            <div id="weather" class="mx-2 d-flex no-wrap align-items-center">
+                <i class="fas fa-cloud-sun mx-2"></i>
+                <p id="temperature" class="mx-2 my-0">30&#8451;</p>
+                <p id="location" class="my-0">HCM city</p>
+            </div>
+            <div id="date" class="mx-2 d-flex">
+                <p id="currentDate" class="my-0">Monday, April 22</p>
+            </div>
+            <div id="nav-menu" class="mx-4 d-flex">
+                <a class="mx-2 text-light" href="/loginForm/">Sign in / Join</a>
+                <a class="mx-2 text-light" href="#">Blog</a>
+                <a class="mx-2 text-light" href="#">Forums</a>
+                <a class="mx-2 text-light" href="#">Contact</a>
+            </div>
+        </div>
+        <!-- <div class="col- d-flex justify-content-end"></div> -->
+        <div class="col-3">
+            <div id="share-social">
+                <a href="#"><i class="fab fa-facebook-f mx-2"></i></a>
+                <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                <a href="#"><i class="fab fa-youtube mx-2"></i></a>
+            </div>
+        </div>
     </div>
 </header>
-<div id="menu" class="bg-light text-dark">
-    <ul id="newspaper-menu">
-        <li class="dropdown">
-            <button class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">ABC</button>
+<div id="menu" class="bg-white text-dark shadow p-0 mb-1 bg-white rounded">
+    <div class="logo d-flex justify-content-center">
+        <a href="https://demo.tagdiv.com/newspaper/">
+            <img src="https://demo.tagdiv.com/newspaper/wp-content/uploads/2018/08/logo-header.png"
+                alt="Newspaper WordPress Theme">
+        </a>
+    </div>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">News</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </li>
-        <li class="dropdown">
-            <button class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">XYZ</button>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Phones</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </li>
-        <li class="dropdown">
-            <button class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">EDF</button>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Laptop</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Technology</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item search-bar">
+            <form action="submit">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </li>
     </ul>
 </div>
