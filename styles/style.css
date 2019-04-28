@@ -1,15 +1,39 @@
 #share-social a {
     color: white;
 }
-#nav-menu a:hover {
-    text-decoration: red;
-    color: red;
+
+#share-social a i.fa-facebook-f:hover {
+    color: #3C5A99 !important;
 }
+
+#share-social a i.fa-twitter:hover {
+    color: #429CD5 !important;
+}
+
+#share-social a i.fa-youtube:hover {
+    color: #c4302b !important;
+}
+
+#nav-menu a:hover {
+    text-decoration: none;
+    color: #F16C5F !important;
+}
+
 #menu ul li.nav-item {
     width: 100px;
     margin: 10px;
     margin-bottom: 5px;
 }
+
+#menu ul li.nav-item .dropdown:hover>.dropdown-menu {
+    display: block !important;
+}
+
+#menu ul li.nav-item .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
 #menu ul li.nav-item.search-bar {
     width: 250px;
     margin: 10px;
