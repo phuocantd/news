@@ -15,7 +15,7 @@ const db = firebase.firestore();
 // update firestore settings
 db.settings({ timestampsInSnapshots: true });
 
-/ signup
+// signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
