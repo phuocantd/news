@@ -19,7 +19,7 @@ db.settings({ timestampsInSnapshots: true });
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
-        alert("user logged in: ")
+        alert("user logged in")
         console.log('user logged in: ', user);
         var redirect = "../";
         window.location.href = redirect;
