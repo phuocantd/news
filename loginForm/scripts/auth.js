@@ -15,6 +15,19 @@ const db = firebase.firestore();
 // update firestore settings
 db.settings({ timestampsInSnapshots: true });
 
+
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        alert("user logged in: ")
+        console.log('user logged in: ', user);
+        var redirect = "../";
+        window.location.href = redirect;
+    } else {
+        console.log('user logged out');
+    }
+})
+
 // signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
