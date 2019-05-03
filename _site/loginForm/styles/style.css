@@ -1,7 +1,7 @@
 body {
     width: 100%;
     height: auto;
-    background: -webkit-linear-gradient(0deg, #3c96ff 0%, #2dfbff 100%);
+    background-image: url("/loginForm/src/background.jpg");
     font-family: "Robato", sans-serif;
     font-size: 17px;
 }
@@ -9,7 +9,7 @@ body {
 #logreg-forms {
     width: 412px;
     margin: 10vh auto;
-    background-color: #ffffff4d;
+    background-color: #07962a4d;
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.12), 0 12px 40px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }

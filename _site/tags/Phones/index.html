@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Newspaper</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Jquerry -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Awseome font -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Css files -->
+    <link rel="stylesheet" href="/news/styles/style.css">
+    <!-- JS files -->
+    <script src="/news/scripts/script.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- Facebook plugin -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+
+    <header class="bg-dark text-light d-flex justify-content-center align-items-center px-0 py-2">
+    <div class="row" style="width: 90%">
+        <div class="col-9 d-flex justify-content-end">
+            <div id="weather" class="mx-2 d-flex no-wrap align-items-center">
+                <i class="fas fa-cloud-sun mx-2"></i>
+                <p id="temperature" class="mx-2 my-0">30&#8451;</p>
+                <p id="location" class="my-0">HCM city</p>
+            </div>
+            <div id="date" class="mx-2 d-flex">
+                <p id="currentDate" class="my-0">Monday, April 22</p>
+            </div>
+            <div id="nav-menu" class="mx-4 d-flex">
+                <a class="mx-2 text-light" href="/news/loginForm/">Sign in / Join</a>
+                <a class="mx-2 text-light" href="#">Blog</a>
+                <a class="mx-2 text-light" href="#">Forums</a>
+                <a class="mx-2 text-light" href="#">Contact</a>
+            </div>
+        </div>
+        <!-- <div class="col- d-flex justify-content-end"></div> -->
+        <div class="col-3">
+            <div id="share-social">
+                <a href="#"><i class="fab fa-facebook-f mx-2"></i></a>
+                <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                <a href="#"><i class="fab fa-youtube mx-2"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="logo d-flex justify-content-center">
+    <a href="/news/">
+        <img src="https://demo.tagdiv.com/newspaper/wp-content/uploads/2018/08/logo-header.png"
+            alt="Newspaper WordPress Theme">
+    </a>
+</div>
+<div id="menu" class="bg-white text-dark shadow p-0 mb-1 bg-white rounded sticky-top">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <button class="btn nav-link bg-white">News</button>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Phones</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Android</a>
+                    <a class="dropdown-item" href="#">iOS</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Laptop</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Asus</a>
+                    <a class="dropdown-item" href="#">Dell</a>
+                    <a class="dropdown-item" href="#">HP</a>
+                    <a class="dropdown-item" href="#">MSI</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white">Technology</button>
+            </div>
+        </li>
+        <li class="nav-item search-bar">
+            <form action="submit">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </li>
+    </ul>
+</div>
+
+    <!-- TAGS -->
+<div class="container px-5">
+    <div class="row my-4">
+        <!-- Post content -->
+        <div class="col-8 pl-0 post-content">
+            <!-- Tags -->
+            <h5>Tags: <a href="/news/tags/Phones/">Phones</a></h5>
+            <div class="tag-content">
+                <article class="tag-phone tag-android d-flex">
+                    <a href="/news/posts" class="row">
+                        <div class="col-3">
+                            <img class="rounded" src="/news/Demo-Pictures/google-pixel-3-01.jpg" alt="ERROR">
+                        </div>
+                        <div class="col-9">
+                            <div class="tag-info">
+                                <h4>Pixel 3 phones aren't selling, and it's probably Verizon's fault</h4>
+                                <h6>Google says it's sold fewer Pixel phones year over year due to fierce smartphone
+                                    competition
+                                    on the high end, but that probably isn't the entire story.</h6>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+        <div class="col-4 pr-0">
+            <div class="sticky-top" style="top: 80px; z-index: 100">
+    <div class="connected-info">
+        <h6 class="underline-seperate">
+            <span class="px-1">STAY CONNECTED</span>
+        </h6>
+        <div class="social-facebook my-3">
+            <a href="https://facebook.com/" class="row">
+                <div class="col-2"><i class="fab fa-facebook-f"></i></div>
+                <div class="col-6"><span>9999 Fans</span></div>
+                <div class="col-4 text-right"><span><strong>LIKE</strong></span></div>
+            </a>
+        </div>
+        <div class="social-twitter my-3">
+            <a href="https://twitter.com/" class="row">
+                <div class="col-2"><i class="fab fa-twitter"></i></div>
+                <div class="col-6"><span>9999 Followers</span></div>
+                <div class="col-4 text-right"><span><strong>FOLLOW</strong></span></div>
+            </a>
+        </div>
+        <div class="social-youtube my-3">
+            <a href="https://www.youtube.com/" class="row">
+                <div class="col-2"><i class="fab fa-youtube"></i></div>
+                <div class="col-6"><span>9999 Subscribers</span></div>
+                <div class="col-4 text-right"><span><strong>SUBSCRIBE</strong></span></div>
+            </a>
+        </div>
+    </div>
+    <div class="related-news">
+        <h6 class="underline-seperate">
+            <span class="px-1">RELATED NEWS</span>
+        </h6>
+        <div class="row">
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+    <footer class="py-5 bg-dark">
+        <div class="footer-container">
+    <div class="row">
+        <div class="col-3">
+            <div class="logo">
+                <a href="/news/">
+                    <img src="https://demo.tagdiv.com/newspaper/wp-content/uploads/2018/08/logo-header.png"
+                        alt="Newspaper WordPress Theme">
+                </a>
+            </div>
+        </div>
+        <div class="col-6">
+            <h5 class="text-light"><strong>ABOUT</strong></h5>
+            <div class="email-contact my-2">
+                <i class="fas fa-envelope text-light"></i>
+                <a class="text-light" href="https://google.com">Email@gmail.com</a>
+            </div>
+            <div class="phone-contact my-2">
+                <i class="fas fa-phone text-light"></i>
+                <a class="text-light" href="https://google.com">0123456789</a>
+            </div>
+            <div class="contact-contact my-2">
+                <i class="fas fa-map-marker-alt text-light"></i>
+                <a class="text-light" href="https://google.com">227 Nguyen Van Cu, District 5, HCM city</a>
+            </div>
+        </div>
+        <div class="col-3">
+            <h5 class="text-light"><strong>FOLLOW</strong></h5>
+            <div class="follow">
+                <a class="mr-3" href="https://facebook.com"><i class="fab fa-facebook-square fa-3x text-light"></i></a>
+                <a class="mr-3" href="https://twitter.com"><i class="fab fa-twitter-square fa-3x text-light"></i></a>
+                <a class="mr-3" href="https://youtube.com"><i class="fab fa-youtube-square fa-3x text-light"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+    </footer>
+
+
+</body>
+
+</html>

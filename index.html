@@ -10,15 +10,16 @@ layout: default
         <div id="carouselHotNews" class="col-10 carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="3000">
-                    <a class="text-dark" href="{{ '/listPost/listpost.html' | relative_url }}">Pixel 3 phones aren't
+                    <a class="text-dark" href="{{ '/posts' | relative_url }}">Pixel 3 phones aren't
                         selling, and it's probably Verizon's fault</a>
                 </div>
                 <div class="carousel-item" data-interval="3000">
-                    <a class="text-dark" href="#">Google sit-in: Workers protest alleged company retaliation after
+                    <a class="text-dark" href="{{ '/posts' | relative_url }}">Google sit-in: Workers protest alleged
+                        company retaliation after
                         walkout</a>
                 </div>
                 <div class="carousel-item" data-interval="3000">
-                    <a class="text-dark" href="#">ABC</a>
+                    <a class="text-dark" href="{{ '/posts' | relative_url }}">ABC</a>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselHotNews" role="button" data-slide="prev">
@@ -34,7 +35,7 @@ layout: default
     <!-- News grid -->
     <div id="gridNews" class="row">
         <div id="bigLeft" class="col pl-0">
-            <a href="#">
+            <a href="{{ '/posts' | relative_url }}">
                 <figure>
                     <img src="{{ '/Demo-Pictures/iphone.jpg' | relative_url }}" alt="Error loading image">
                 </figure>
@@ -52,7 +53,7 @@ layout: default
         </div>
         <div id="bigRight" class="col px-3">
             <div id="upRight" class="row">
-                <a href="#">
+                <a href="{{ '/posts' | relative_url }}">
                     <figure>
                         <img src="{{ '/Demo-Pictures/google-pixel-3-01.jpg' | relative_url }}"
                             alt="Error loading image">
@@ -73,7 +74,7 @@ layout: default
             </div>
             <div id="downRight" class="row">
                 <div id="smallLeft" class="col pl-0">
-                    <a href="#">
+                    <a href="{{ '/posts' | relative_url }}">
                         <figure>
                             <img src="{{ '/Demo-Pictures/hp-pavilion-gaming-laptop.jpg' | relative_url }}"
                                 alt="Error loading image">
@@ -88,7 +89,7 @@ layout: default
                     </a>
                 </div>
                 <div id="smallRight" class="col pl-0">
-                    <a href="#">
+                    <a href="{{ '/posts' | relative_url }}">
                         <figure>
                             <img src="{{ '/Demo-Pictures/google-company.jpeg' | relative_url }}"
                                 alt="Error loading image">
@@ -108,7 +109,7 @@ layout: default
     <!-- News into categories -->
     <div class="row my-4">
         <div class="col-8 pl-0">
-            <div class="news-content my-4">
+            <div class="news-content mb-5">
                 <h6 class="underline-seperate-red">
                     <span class="px-1">NEWS</span>
                 </h6>
@@ -119,28 +120,28 @@ layout: default
                         <li data-target="#news-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a class="carousel-item active" data-interval="4000">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item active" data-interval="4000">
                             <img src="{{ '/Demo-Pictures/news-001.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Tổng thống Venezuela thể hiện tình đoàn kết với tướng lĩnh</h5>
                                 <p>Tổng thống Venezuela Nicolas Maduro và các quan chức quân sự chủ chốt hôm 2/5 đã có
-                                    màn thể hiện tình đoàn kết trên truyền...
+                                    màn thể hiện tình đoàn kết trên truyền...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
                             <img src="{{ '/Demo-Pictures/news-002.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>China is stealing tech to rapidly modernize its military, Pentagon warns</h5>
                                 <p>(CNN)China is continuing to modernize its armed forces in order to transform its
-                                    military into a major global power ...
+                                    military into a major global power ...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
                             <img src="{{ '/Demo-Pictures/news-003.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Trump admin seeking to get money to Venezuela's Guaido</h5>
                                 <p>Washington (CNN)The Trump administration is looking for ways to financially bolster
-                                    Venezuelan opposition leader Juan Guaido, ...
+                                    Venezuelan opposition leader Juan Guaido, ...</p>
                             </div>
                         </a>
                     </div>
@@ -154,7 +155,7 @@ layout: default
                     </a>
                 </div>
             </div>
-            <div class="phones-content my-4">
+            <div class="phones-content mb-5">
                 <h6 class="underline-seperate-yellow">
                     <span class="px-1">PHONES</span>
                 </h6>
@@ -165,28 +166,28 @@ layout: default
                         <li data-target="#phones-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a class="carousel-item active" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-001.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item active" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/iphone-01.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Tổng thống Venezuela thể hiện tình đoàn kết với tướng lĩnh</h5>
-                                <p>Tổng thống Venezuela Nicolas Maduro và các quan chức quân sự chủ chốt hôm 2/5 đã có
-                                    màn thể hiện tình đoàn kết trên truyền...
+                                <h5>New iPhone 11 release date, price, news and leaks</h5>
+                                <p>The iPhone 11 release date is likely in September, but Apple is already rumored to be
+                                    testing out several new iPhone 2019 ...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-002.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/iphone-02.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>China is stealing tech to rapidly modernize its military, Pentagon warns</h5>
-                                <p>(CNN)China is continuing to modernize its armed forces in order to transform its
-                                    military into a major global power ...
+                                <h5>iPhone SE 2 release date, price & specs rumours</h5>
+                                <p>We round up the latest leaks and rumours about the iPhone SE 2's release date, price,
+                                    tech specs, design, and new features ...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-003.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/iphone-03.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Trump admin seeking to get money to Venezuela's Guaido</h5>
-                                <p>Washington (CNN)The Trump administration is looking for ways to financially bolster
-                                    Venezuelan opposition leader Juan Guaido, ...
+                                <h5>iOS 13 release date & new features rumours</h5>
+                                <p>When will Apple release the next version of iOS for iPhone and iPad, and what new
+                                    features will it bring? We round up the iOS 13 leaks and rumours
                             </div>
                         </a>
                     </div>
@@ -200,7 +201,7 @@ layout: default
                     </a>
                 </div>
             </div>
-            <div class="laptops-content my-4">
+            <div class="laptops-content mb-5">
                 <h6 class="underline-seperate-blue">
                     <span class="px-1">LAPTOPS</span>
                 </h6>
@@ -211,28 +212,28 @@ layout: default
                         <li data-target="#laptops-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a class="carousel-item active" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-001.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item active" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/laptop-01.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Tổng thống Venezuela thể hiện tình đoàn kết với tướng lĩnh</h5>
-                                <p>Tổng thống Venezuela Nicolas Maduro và các quan chức quân sự chủ chốt hôm 2/5 đã có
-                                    màn thể hiện tình đoàn kết trên truyền...
+                                <h5>19 Best Android Games to Play On Your Chromebook</h5>
+                                <p>Now that most new Chromebooks run Android apps via the Google Play store, the gaming
+                                    options for Chrome OS laptops ...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-002.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/laptop-02.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>China is stealing tech to rapidly modernize its military, Pentagon warns</h5>
-                                <p>(CNN)China is continuing to modernize its armed forces in order to transform its
-                                    military into a major global power ...
+                                <h5>Should I Buy a Chromebook? Buying Guide and Advice</h5>
+                                <p>A Chromebook is a laptop of a different breed. Instead of Windows 10 or macOS,
+                                    Chromebooks run Google's Chrome OS ...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-003.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/laptop-03.jpg' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Trump admin seeking to get money to Venezuela's Guaido</h5>
-                                <p>Washington (CNN)The Trump administration is looking for ways to financially bolster
-                                    Venezuelan opposition leader Juan Guaido, ...
+                                <h5>Best Touch Screen Laptops of 2019</h5>
+                                <p>Whether you're jotting down notes, sketching a masterpiece or just quickly zooming in
+                                    on a photo, touch screens add a lot ...</p>
                             </div>
                         </a>
                     </div>
@@ -246,7 +247,7 @@ layout: default
                     </a>
                 </div>
             </div>
-            <div class="technology-content my-4">
+            <div class="technology-content mb-5">
                 <h6 class="underline-seperate-green">
                     <span class="px-1">TECHNOLOGY</span>
                 </h6>
@@ -257,28 +258,28 @@ layout: default
                         <li data-target="#technology-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a class="carousel-item active" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-001.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item active" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/tech-01.webp' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Tổng thống Venezuela thể hiện tình đoàn kết với tướng lĩnh</h5>
-                                <p>Tổng thống Venezuela Nicolas Maduro và các quan chức quân sự chủ chốt hôm 2/5 đã có
-                                    màn thể hiện tình đoàn kết trên truyền...
+                                <h5>Tesla’s new safety features really push you to stay in your lane</h5>
+                                <p>Tesla has introduced a pair of new safety features for its cars, which are designed
+                                    to stop you from drifting out of your lane...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-002.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/tech-02.webp' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>China is stealing tech to rapidly modernize its military, Pentagon warns</h5>
-                                <p>(CNN)China is continuing to modernize its armed forces in order to transform its
-                                    military into a major global power ...
+                                <h5>Microsoft unveils HoloLens 2 developer edition for $3,500</h5>
+                                <p>Microsoft is launching a developer edition of the company’s HoloLens 2 headset today.
+                                    Priced at $3,500, it’s the exact same ...</p>
                             </div>
                         </a>
-                        <a class="carousel-item" data-interval="4000">
-                            <img src="{{ '/Demo-Pictures/news-003.jpg' | relative_url }}" alt="Error loading image">
+                        <a href="{{ '/posts' | relative_url }}" class="carousel-item" data-interval="4000">
+                            <img src="{{ '/Demo-Pictures/tech-03.webp' | relative_url }}" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Trump admin seeking to get money to Venezuela's Guaido</h5>
-                                <p>Washington (CNN)The Trump administration is looking for ways to financially bolster
-                                    Venezuelan opposition leader Juan Guaido, ...
+                                <h5>Adobe tests doubling the price of its Lightroom and Photoshop plan</h5>
+                                <p>Adobe is testing raising the price for its Creative Cloud Photography plan, taking it
+                                    from $10 / month to $20 / month, as spotted ...</p>
                             </div>
                         </a>
                     </div>
