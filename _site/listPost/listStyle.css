@@ -1,0 +1,45 @@
+body{
+    width: 1000px;
+    margin:auto;
+    background: rgb(153, 147, 147);
+    padding: 5px;
+}
+
+#left{
+    width: 700px;
+    background: rgb(248, 242, 242);
+    float:left;
+}
+#right{
+    width:300px;
+    float: right;
+    background:gray;
+}
+
+.titleImg{
+    text-align: center;
+    margin-top: 0;
+    font-style: italic;
+}
+
+#rnews{
+    color: red;
+    border: 2px red solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.left1{
+    width: 300px;
+    float:left;
+}
+
+.right1{
+    width: 370px;
+    float: right;
+}
+
+.text{
+    text-decoration: none;
+}
