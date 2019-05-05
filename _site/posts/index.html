@@ -21,6 +21,10 @@
     <!-- Jquerry -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <!-- Awseome font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -28,7 +32,8 @@
     <link rel="stylesheet" href="/news/styles/style.css">
     <!-- JS files -->
     <script src="/news/scripts/script.js"></script>
-
+    <script src="/news/scripts/index.js"></script>
+    <script src="/news/scripts/auth.js"></script>
 
 
 </head>
@@ -92,7 +97,7 @@
         <li class="nav-item">
             <div class="dropdown">
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Laptop</button>
+                    aria-expanded="false">Laptops</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Asus</a>
                     <a class="dropdown-item" href="#">Dell</a>
@@ -329,6 +334,25 @@
                 <a class="mr-3" href="https://youtube.com"><i class="fab fa-youtube-square fa-3x text-light"></i></a>
             </div>
         </div>
+    </div>
+</div>
+        <div class="view-type fixed-bottom">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Normal user">
+            <i class="fas fa-users text-light"></i>
+        </a>
+        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Premium user">
+            <i class="fas fa-star text-light"></i>
+        </a>
+        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Writter user">
+            <i class="fas fa-pen text-light"></i>
+        </a>
+        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Editor user">
+            <i class="fas fa-edit text-light"></i>
+        </a>
+        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Admin">
+            <i class="fas fa-users-cog text-light"></i>
+        </a>
     </div>
 </div>
     </footer>
