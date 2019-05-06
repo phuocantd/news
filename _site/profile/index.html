@@ -28,6 +28,19 @@
     <!-- Awseome font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Tagify -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@2.18.2/dist/tagify.min.js"></script>
+    <!-- Main Quill library -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <!-- Theme included stylesheets -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    <!-- Core build with no theme, formatting, non-essential modules -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+    <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
     <!-- Css files -->
     <link rel="stylesheet" href="/news/styles/style.css">
     <!-- JS files -->
@@ -89,8 +102,8 @@
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Phones</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Android</a>
-                    <a class="dropdown-item" href="#">iOS</a>
+                    <a class="dropdown-item" href="/news/tags/Android/">Android</a>
+                    <a class="dropdown-item" href="/news/tags/ios/">iOS</a>
                 </div>
             </div>
         </li>
@@ -99,10 +112,10 @@
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Laptops</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Asus</a>
-                    <a class="dropdown-item" href="#">Dell</a>
-                    <a class="dropdown-item" href="#">HP</a>
-                    <a class="dropdown-item" href="#">MSI</a>
+                    <a class="dropdown-item" href="/news/tags/Asus/">Asus</a>
+                    <a class="dropdown-item" href="/news/tags/Dell/">Dell</a>
+                    <a class="dropdown-item" href="/news/tags/HP/">HP</a>
+                    <a class="dropdown-item" href="/news/tags/MSI/">MSI</a>
                 </div>
             </div>
         </li>
@@ -125,6 +138,10 @@
         </li>
     </ul>
 </div>
+<a href="/news/writePost/" id="writter-btn" class="fixed-top btn btn-primary shadow">
+    <i class="fas fa-edit"></i>
+    <span>Write</span>
+</a>
 
     <div class="container emp-profile">
   <form method="post">
@@ -280,19 +297,19 @@
 </div>
         <div class="view-type fixed-bottom">
     <div class="btn-group" role="group" aria-label="Basic example">
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Normal user">
+        <a href="?type=reader" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Normal user">
             <i class="fas fa-users text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Premium user">
+        <a href="?type=premium" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Premium user">
             <i class="fas fa-star text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Writter user">
+        <a onclick="writterMode()" href="#" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Writter user">
             <i class="fas fa-pen text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Editor user">
+        <a href="?type=editor" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Editor user">
             <i class="fas fa-edit text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Admin">
+        <a href="?type=admin" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Admin">
             <i class="fas fa-users-cog text-light"></i>
         </a>
     </div>

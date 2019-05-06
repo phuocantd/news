@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Newspaper</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Jquerry -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <!-- Awseome font -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Tagify -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@2.18.2/dist/tagify.min.js"></script>
+    <!-- Main Quill library -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <!-- Theme included stylesheets -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    <!-- Core build with no theme, formatting, non-essential modules -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+    <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+    <!-- Css files -->
+    <link rel="stylesheet" href="/news/styles/style.css">
+    <!-- JS files -->
+    <script src="/news/scripts/script.js"></script>
+    <script src="/news/scripts/index.js"></script>
+    <script src="/news/scripts/auth.js"></script>
+
+
+</head>
+
+<body>
+    <!-- Facebook plugin -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+
+    <header class="bg-dark text-light d-flex justify-content-center align-items-center px-0 py-2">
+    <div class="row" style="width: 90%">
+        <div class="col-9 d-flex justify-content-end">
+            <div id="weather" class="mx-2 d-flex no-wrap align-items-center">
+                <i class="fas fa-cloud-sun mx-2"></i>
+                <p id="temperature" class="mx-2 my-0">30&#8451;</p>
+                <p id="location" class="my-0">HCM city</p>
+            </div>
+            <div id="date" class="mx-2 d-flex">
+                <p id="currentDate" class="my-0">Monday, April 22</p>
+            </div>
+            <div id="nav-menu" class="mx-4 d-flex">
+                <a class="mx-2 text-light" href="/news/loginForm/">Sign in / Join</a>
+                <a class="mx-2 text-light" href="#">Blog</a>
+                <a class="mx-2 text-light" href="#">Forums</a>
+                <a class="mx-2 text-light" href="#">Contact</a>
+            </div>
+        </div>
+        <!-- <div class="col- d-flex justify-content-end"></div> -->
+        <div class="col-3">
+            <div id="share-social">
+                <a href="#"><i class="fab fa-facebook-f mx-2"></i></a>
+                <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                <a href="#"><i class="fab fa-youtube mx-2"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="logo d-flex justify-content-center">
+    <a href="/news/">
+        <img src="https://demo.tagdiv.com/newspaper/wp-content/uploads/2018/08/logo-header.png"
+            alt="Newspaper WordPress Theme">
+    </a>
+</div>
+<div id="menu" class="bg-white text-dark shadow p-0 mb-1 bg-white rounded sticky-top">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <button class="btn nav-link bg-white">News</button>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Phones</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/news/tags/Android/">Android</a>
+                    <a class="dropdown-item" href="/news/tags/ios/">iOS</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Laptops</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/news/tags/Asus/">Asus</a>
+                    <a class="dropdown-item" href="/news/tags/Dell/">Dell</a>
+                    <a class="dropdown-item" href="/news/tags/HP/">HP</a>
+                    <a class="dropdown-item" href="/news/tags/MSI/">MSI</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn nav-link bg-white">Technology</button>
+            </div>
+        </li>
+        <li class="nav-item search-bar">
+            <form action="submit">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </li>
+    </ul>
+</div>
+<a href="/news/writePost/" id="writter-btn" class="fixed-top btn btn-primary shadow">
+    <i class="fas fa-edit"></i>
+    <span>Write</span>
+</a>
+
+    <!-- POST -->
+<div class="post-picture">
+    <img src="/news/Demo-Pictures/laptop1.jpg" alt="ERROR">
+</div>
+<div class="container px-5">
+    <!-- News into categories -->
+    <div class="row my-4">
+        <!-- Post content -->
+        <div class="col-8 pl-0 post-content">
+            <h1><strong>Best gaming laptops 2019: the 10 top gaming laptops we've reviewed</strong></h1>
+            <h4>Find the best gaming laptop to suit your fragging needs</h4>
+            <div class="post-info text-secondary d-flex my-4">
+                <div class="writter mr-3">
+                    <i class="fas fa-user-edit"></i>
+                    <span> Joe Osborne, Kevin Lee</span>
+                </div>
+                <div class="post-date mr-3">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>MAY 3, 2019 2:13 PM PDT</span>
+                </div>
+                <div class="tag">
+                    <i class="fas fa-tag"></i>
+                    <a class="mr-2 text-secondary" href="/news/tags/Laptops/">Laptop</a>
+                </div>
+            </div>
+            <img src="/news/Demo-Pictures/laptop1.jpg" alt="ERROR">
+            <p>
+                The best gaming laptops have changed so much in such a short amount of time, and now they’re more powerful than ever before. 
+                Thanks to additions like Nvidia RTX graphics, the best gaming laptops can push the best <a href="https://www.techradar.com/news/gaming/10-best-pc-games-the-must-play-titles-you-can-t-afford-to-miss-1292327">PC games</a> at higher resolutions and frame rates.
+                 You don’t need to put together the <a href="https://www.techradar.com/news/computing/pc/10-of-the-best-gaming-pcs-you-can-buy-in-2015-1304263">best gaming PC</a> to get high specs and performance anymore. 
+                 Plus, the best gaming laptops come in every shape and size.
+                <br><br>
+                That’s why you shouldn’t judge a gaming laptop by its cover. 
+                Thanks to Nvidia Turing Max-Q graphics for laptops, there are a ton of gaming laptops that can hide in plain sight. 
+                Just look at the aptly named MSI GS65 Stealth. Don’t worry,
+                 if you want a beastly desktop replacement, that option is still open to you,
+                  with devices like the MSI GT75 that demand attention from anyone that steps in the room.
+                <br><br>
+                So, whether you want a thicc desktop replacement, packed with the most powerful graphics and processors so that you can run the Division 2 and Sekiro: Shadows Die Twice with the settings cranked, you’re in luck. 
+                Or, if you just want a thin and light gaming laptop that’ll let you play your favorite games on the road, we’ve got a few up your alley. 
+                There are even some more affordable laptops like the Dell G3. And, don’t worry, we’ve tested these gaming laptops ourselves, so you know they’ll be up to snuff. 
+                <br>
+            </p>
+            <div>
+                <h2>1. Asus ROG Zephyrus S GX701 </h2>
+                <h3>Power and beauty</h3>
+                <p><b>CPU:</b> Intel Core i7 | <b>Graphics:</b> Nvidia GeForce GTX 2080 MAX-Q (8GB GDDR6 VRAM) | <b>RAM:</b> 8-24GB | <b> Screen:</b> 17.3-inch FHD (1,920 x 1,080) 144Hz panel with G-Sync | <b>Storage:</b> 1TB M.2 PCIe x4 SSD</p>
+                <img src="/news/Demo-Pictures/laptop2.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>If you want to play some of the best PC games on the move, but you don’t want everyone to know you’re playing games, the MSI GS65 Stealth is the best gaming laptop for you. Coming in at just .69 inches thick and featuring impressive hardware like Intel Coffee Lake processors and Nvidia GeForce GTX 10-series – refreshed with RTX 20-series graphics at CES – the MSI GS65 Stealth packs a ton of power into a very svelte package. There’s nothing you won’t be able to throw at this thing that’ll slow it down. And, thanks to the subdued design, you’ll be able to bring this beefy rig everywhere you go, making it the best gaming laptop on the market right now.</p>
+            </div>
+
+            <div>
+                <h2>2. MSI GS65 Stealth </h2>
+                <h3>Thin. Beautiful. Powerful.</h3>
+                <p> <b>CPU:</b> Intel Core i7 | <b>Graphics:</b> Nvidia GeForce GTX 1070 (8GB GDDR5X VRAM, Max-Q) | <b>RAM:</b> 16GB | <b>Screen:</b> 15.6-inch FHD (1,920 x 1,080) anti-glare, wide-view 144Hz panel | <b>Storage:</b> 512GB M.2 SSD</p>
+                <img src="/news/Demo-Pictures/laptop3.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>If you want to play some of the best PC games on the move, but you don’t want everyone to know you’re playing games, the MSI GS65 Stealth is the best gaming laptop for you. Coming in at just .69 inches thick and featuring impressive hardware like Intel Coffee Lake processors and Nvidia GeForce GTX 10-series – refreshed with RTX 20-series graphics at CES – the MSI GS65 Stealth packs a ton of power into a very svelte package. There’s nothing you won’t be able to throw at this thing that’ll slow it down. And, thanks to the subdued design, you’ll be able to bring this beefy rig everywhere you go, making it the best gaming laptop on the market right now.</p>
+            </div>
+
+            <div>
+                <h2>3. Razer Blade </h2>
+                <h3>The best Blade yet</h3>
+                <p><b>CPU:</b> Intel Core i7-8750H | <b>Graphics:</b> Nvidia GeForce RTX 2060 (6GB GDDR6 VRAM) - Nvidia GeForce RTX 2080 (8GB GDDR6 VRAM) | <b>RAM:</b> 16GB | <b>Screen:</b> Up to 15.6-inch UHD (3,840 x 2,160) 60Hz touch display | <b>Storage:</b> 256GB - 512GB M.2 SSD</p>
+                <img src="/news/Demo-Pictures/laptop4.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>For a few years now, the Razer Blade has been among the best gaming laptops on the market, filled with powerful components, beautiful displays and an elegant chassis. That’s all true for the 2019 model, too, which now rocks up to an Nvidia GeForce RTX 2080. That is, frankly, a ton of power for a laptop this thin and light. Plus, even if that’s not enough GPU horsepower for you, you can use the Razer Core for future expansion. It’s an expensive device, but it might be worth it if style and power are equally as important to you.</p>
+            </div>
+
+            <div>
+                <h2>4. Lenovo Legion Y7000P</h2>
+                <h3>The budget warrior</h3>
+                <p><b>CPU:</b> Intel Core i7 – 8750H | <b>Graphics:</b> Nvidia GeForce GTX 1060 (6GB GDDR5 VRAM) | <b>RAM:</b> 8GB – 16GB | <b>Screen:</b> 15.6-inch FHD (1,920 x 1,080) | <b>Storage:</b> 256GB SSD – 256GB SSD + 1TB HDD</p>
+                <img src="/news/Demo-Pictures/laptop5.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>The best gaming laptops keep getting more expensive every day. Especially now that Nvidia RTX graphics are available, getting a powerful gaming laptop carries quite the toll. Luckily, laptops like the Lenovo Legion Y7000P are here to lighten the load. This budget-minded gaming laptop features an Nvidia GeForce GTX 1060, which should be just fine for its 1080p 60Hz display. When it’s a question of getting the essentials in order to save some cash, the Lenovo Legion Y7000P is a no-brainer.</p>
+            </div>
+
+             <div>
+                <h2>5. MSI GT75 Titan</h2>
+                <h3>The big one</h3>
+                <p><b>CPU:</b> 8th-generation Intel Core i7-i9 | <b>Graphics:</b> Nvidia GeForce GTX 1080 (8GB GDDR5X VRAM) | <b>RAM:</b> Up to 32GB | <b>Screen:</b> 17.3-inch FHD - UHD (1,920 x 1,080 - 3,840 x 2,160) | <b>Storage:</b> 1TB, 1TB HDD</p>
+                <img src="/news/Demo-Pictures/laptop6.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>Some gaming laptops just don’t pull any punches, enabling you to run any game you can imagine without breaking a sweat – and the MSI GT75 Titan is one of these laptops. It’s a titanic desktop replacement packing 6-core Intel Coffee Lake processors, plenty of RAM and powerful Nvidia Pascal graphics. You’re not going to be able to carry it around with you, and it’s not going to be something you’ll be caught with in a coffee shop, but if raw power is what you’re after, look no further. Just be ready to break open your piggy bank. </p>
+            </div>
+
+             <div>
+                <h2>6. Asus ROG G703GI</h2>
+                <h3>The behemoth</h3>
+                <p><b>CPU:</b> Intel Core i7-i9 | <b>Graphics:</b> Nvidia GeForce GTX 1080 (8GB GDDR5X VRAM) | <b>RAM:</b> 64GB | <b>Screen:</b> 17.3-inch FHD (1,920 x 1,080)144Hz | <b>Storage:</b> 3 x 512GB SSD (M.2, RAID 0), 2TB HDD</p>
+                <img src="/news/Demo-Pictures/laptop7.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>Thin and light gaming laptops are everywhere right now, but if you don’t care about that, and want a thick, heavy and monstrous laptop that can demolish any game you throw at it – the Asus ROG G703GI is for you. This is a massive – and expensive – laptop, but it justifies its size and price with gaming performance that rivals the best gaming PCs. Just don’t think you’ll be able to haul it along with you to your local coffee shop without its two power bricks – or awkward stares.</p>
+            </div>
+
+             <div>
+                <h2>7. Asus ROG Strix GL502</h2>
+                <h3>It's hard not to love a gaming laptop this good</h3>
+                <p><b>CPU:</b>Intel Core i7 | <b>Graphics:</b> Nvidia GeForce GTX 1060 - 1070 | <b>RAM:</b> 16GB DDR4 | <b>Screen:</b> 15.6-inch full HD 1,920 x 1,080 IPS | <b>Storage:</b> 128GB - 256GB SSD, 1TB HDD</p>
+                <img src="/news/Demo-Pictures/laptop8.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>It may not boast the most innovative design, substituting the usual black and red aesthetic for one that makes it feel like Halloween all year round (no complaints here). But, it’s undoubtedly one of the best when it comes to gaming in 1080p. In fact, we were able to crank the setting s all the way up in Overwatch without ever straying below 60fps. It doesn’t feature the longest battery life, but the screen, power and onboard sound system more than make up for it.</p>
+            </div>
+
+             <div>
+                <h2>8. Acer predator Helios 500</h2>
+                <h3>Big and powerful</h3>
+                <p><b>CPU:</b> Intel Core i7-i9 or AMD Ryzen 7 2700 | <b>Graphics:</b> AMD Vega 10 - Nvidia GeForce GTX 1070 (8GB GDDR5X VRAM) | <b>RAM:</b> 16GB | <b>Screen:</b> 17.3-inch FHD (1,920 x 1,080) anti-glare, 144Hz panel | <b>Storage:</b> 256GB - 1 TB M.2 SSD</p>
+                <img src="/news/Demo-Pictures/laptop9.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>If you’re looking for a powerful gaming laptop, and you don’t want to spring for one of those svelte thin and light gamign laptops, the Acer Predator Helios 500 is a good option. Packed with up to an Intel Core i9 processor and full-fat Nvidia GeForce GTX 1070 graphics, this gaming laptop will be able to handle any game you throw at it – even if it’s not the most portable device in the world. If you can get past the mediocre speakers and trackpad, there’s a lot to love here. </p>
+            </div>
+
+             <div>
+                <h2>9. Dell G3 15</h2>
+                <h3>Gaming great on a budget</h3>
+                <p><b>CPU:</b> Intel Core i5 8300H - Core i7-8750H | <b>Graphics:</b> Nvidia GeForce GTX 1050 - GTX 1060 | <b>RAM:</b> 8GB – 16GB | <b>Screen:</b> 15.6-inch, FHD (1,920 x 1,080) | <b>Storage:</b> 1TB SSHD - 512GB PCIe SSD</p>
+                <img src="/news/Demo-Pictures/laptop10.jpg" alt="ERROR">
+            </div>
+            <div>
+                <p>When you’re setting out to buy one of the best gaming laptops, one of the first things you’ll likely notice is how expensive they can get. Luckily, the Dell G3 15 is not just extremely affordable, but it punches above its weight class with great 1080p gaming performance. With up to an Nvidia GTX 1060 GPU, you’ll be able to play all the latest games at 1080p without breaking a sweat, even if it’s not at max settings all the time. And, that blue on black color combo is quite a looker, if that’s your aesthetic. </p>
+            </div>
+
+             <div>
+                <h2>10. Gigabyte Aero 15</h2>
+                <h3>Thin. Light. Powerful.</h3>
+                <p><b>CPU:</b> Intel Core i7 8750H - Intel Core i9-8950HK | <b>Graphics:</b> Nvidia GeForce RTX 2070 (8GB GDDR6) - GeForce RTX 2080 (8GB GDDR6) | <b>RAM:</b>8GB – 32GB | <b>Screen:</b> 15.6-inch, FHD (1,920 x 1,080) LCD anti-glare 144Hz - UHD (3,840 x 2,160) 60Hz | <b>Storage:</b> 1TB - 2TB NVMe SSD</p>
+         
+            </div>
+            <div>
+                <p>Over the last couple of years, there’s been a trend among the best gaming laptops to make them as thin as possible. And, the Gigabyte Aero 15 definitely fits the bill, while delivering top-end gaming performance. This laptop is just 0.74 inches thick, while delivering up to an Nvidia GeForce RTX 2080 and an Intel Core i9 CPU. However, this thinness is a double-edged sword: the Core i9 gets way too hot and can throttle. So, just keep that in mind if you plan on doing any sustained creative work, like editing all your gaming videos. </p>
+            </div>
+            <hr>
+            <!-- Facebook like & share buttons -->
+            <div class="fb-like" data-href="https://phuocantd.github.io/news/post/" data-width="" data-layout="standard"
+                data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            <!-- Facebook comments -->
+            <div class="fb-comments" data-href="https://phuocantd.github.io/news/" data-width="" data-numposts="5">
+            </div>
+        </div>
+        <div class="col-4 pr-0">
+            <div class="sticky-top" style="top: 80px; z-index: 100">
+    <div class="connected-info">
+        <h6 class="underline-seperate">
+            <span class="px-1">STAY CONNECTED</span>
+        </h6>
+        <div class="social-facebook my-3">
+            <a href="https://facebook.com/" class="row">
+                <div class="col-2"><i class="fab fa-facebook-f"></i></div>
+                <div class="col-6"><span>9999 Fans</span></div>
+                <div class="col-4 text-right"><span><strong>LIKE</strong></span></div>
+            </a>
+        </div>
+        <div class="social-twitter my-3">
+            <a href="https://twitter.com/" class="row">
+                <div class="col-2"><i class="fab fa-twitter"></i></div>
+                <div class="col-6"><span>9999 Followers</span></div>
+                <div class="col-4 text-right"><span><strong>FOLLOW</strong></span></div>
+            </a>
+        </div>
+        <div class="social-youtube my-3">
+            <a href="https://www.youtube.com/" class="row">
+                <div class="col-2"><i class="fab fa-youtube"></i></div>
+                <div class="col-6"><span>9999 Subscribers</span></div>
+                <div class="col-4 text-right"><span><strong>SUBSCRIBE</strong></span></div>
+            </a>
+        </div>
+    </div>
+    <div class="related-news">
+        <h6 class="underline-seperate">
+            <span class="px-1">RELATED NEWS</span>
+        </h6>
+        <div class="row">
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/news/posts" class="news-small">
+                    <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
+                    <div class="title">
+                        <small>Apple Patents a New 'Fusion' Keyboard</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+    <footer class="py-5 bg-dark">
+        <div class="footer-container">
+    <div class="row">
+        <div class="col-3">
+            <div class="logo">
+                <a href="/news/">
+                    <img src="https://demo.tagdiv.com/newspaper/wp-content/uploads/2018/08/logo-header.png"
+                        alt="Newspaper WordPress Theme">
+                </a>
+            </div>
+        </div>
+        <div class="col-6">
+            <h5 class="text-light"><strong>ABOUT</strong></h5>
+            <div class="email-contact my-2">
+                <i class="fas fa-envelope text-light"></i>
+                <a class="text-light" href="https://google.com">Email@gmail.com</a>
+            </div>
+            <div class="phone-contact my-2">
+                <i class="fas fa-phone text-light"></i>
+                <a class="text-light" href="https://google.com">0123456789</a>
+            </div>
+            <div class="contact-contact my-2">
+                <i class="fas fa-map-marker-alt text-light"></i>
+                <a class="text-light" href="https://google.com">227 Nguyen Van Cu, District 5, HCM city</a>
+            </div>
+        </div>
+        <div class="col-3">
+            <h5 class="text-light"><strong>FOLLOW</strong></h5>
+            <div class="follow">
+                <a class="mr-3" href="https://facebook.com"><i class="fab fa-facebook-square fa-3x text-light"></i></a>
+                <a class="mr-3" href="https://twitter.com"><i class="fab fa-twitter-square fa-3x text-light"></i></a>
+                <a class="mr-3" href="https://youtube.com"><i class="fab fa-youtube-square fa-3x text-light"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="view-type fixed-bottom">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="?type=reader" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Normal user">
+            <i class="fas fa-users text-light"></i>
+        </a>
+        <a href="?type=premium" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Premium user">
+            <i class="fas fa-star text-light"></i>
+        </a>
+        <a onclick="writterMode()" href="#" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Writter user">
+            <i class="fas fa-pen text-light"></i>
+        </a>
+        <a href="?type=editor" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Editor user">
+            <i class="fas fa-edit text-light"></i>
+        </a>
+        <a href="?type=admin" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Admin">
+            <i class="fas fa-users-cog text-light"></i>
+        </a>
+    </div>
+</div>
+    </footer>
+
+
+</body>
+
+</html>

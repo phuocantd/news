@@ -43,8 +43,8 @@
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Phones</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Android</a>
-                    <a class="dropdown-item" href="#">iOS</a>
+                    <a class="dropdown-item" href="{{ '/tags/Android/' | relative_url }}">Android</a>
+                    <a class="dropdown-item" href="{{ '/tags/ios/' | relative_url }}">iOS</a>
                 </div>
             </div>
         </li>
@@ -53,10 +53,10 @@
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Laptops</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Asus</a>
-                    <a class="dropdown-item" href="#">Dell</a>
-                    <a class="dropdown-item" href="#">HP</a>
-                    <a class="dropdown-item" href="#">MSI</a>
+                    <a class="dropdown-item" href="{{ '/tags/Asus/' | relative_url }}">Asus</a>
+                    <a class="dropdown-item" href="{{ '/tags/Dell/' | relative_url }}">Dell</a>
+                    <a class="dropdown-item" href="{{ '/tags/HP/' | relative_url }}">HP</a>
+                    <a class="dropdown-item" href="{{ '/tags/MSI/' | relative_url }}">MSI</a>
                 </div>
             </div>
         </li>
@@ -79,3 +79,7 @@
         </li>
     </ul>
 </div>
+<a href="{{ '/writePost/' | relative_url }}" id="writter-btn" class="fixed-top btn btn-primary shadow">
+    <i class="fas fa-edit"></i>
+    <span>Write</span>
+</a>

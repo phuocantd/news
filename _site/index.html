@@ -28,6 +28,19 @@
     <!-- Awseome font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Tagify -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@2.18.2/dist/tagify.min.js"></script>
+    <!-- Main Quill library -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <!-- Theme included stylesheets -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    <!-- Core build with no theme, formatting, non-essential modules -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+    <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
     <!-- Css files -->
     <link rel="stylesheet" href="/news/styles/style.css">
     <!-- JS files -->
@@ -89,8 +102,8 @@
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Phones</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Android</a>
-                    <a class="dropdown-item" href="#">iOS</a>
+                    <a class="dropdown-item" href="/news/tags/Android/">Android</a>
+                    <a class="dropdown-item" href="/news/tags/ios/">iOS</a>
                 </div>
             </div>
         </li>
@@ -99,10 +112,10 @@
                 <button class="btn nav-link bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Laptops</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Asus</a>
-                    <a class="dropdown-item" href="#">Dell</a>
-                    <a class="dropdown-item" href="#">HP</a>
-                    <a class="dropdown-item" href="#">MSI</a>
+                    <a class="dropdown-item" href="/news/tags/Asus/">Asus</a>
+                    <a class="dropdown-item" href="/news/tags/Dell/">Dell</a>
+                    <a class="dropdown-item" href="/news/tags/HP/">HP</a>
+                    <a class="dropdown-item" href="/news/tags/MSI/">MSI</a>
                 </div>
             </div>
         </li>
@@ -125,6 +138,10 @@
         </li>
     </ul>
 </div>
+<a href="/news/writePost/" id="writter-btn" class="fixed-top btn btn-primary shadow">
+    <i class="fas fa-edit"></i>
+    <span>Write</span>
+</a>
 
     <!-- HOME-PAGE -->
 <div class="container px-5">
@@ -134,16 +151,16 @@
         <div id="carouselHotNews" class="col-10 carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="3000">
-                    <a class="text-dark" href="/news/posts">Pixel 3 phones aren't
+                    <a class="text-dark" href="/news/posts/phones">Pixel 3 phones aren't
                         selling, and it's probably Verizon's fault</a>
                 </div>
                 <div class="carousel-item" data-interval="3000">
-                    <a class="text-dark" href="/news/posts">Google sit-in: Workers protest alleged
+                    <a class="text-dark" href="/news/posts/phones">Google sit-in: Workers protest alleged
                         company retaliation after
                         walkout</a>
                 </div>
                 <div class="carousel-item" data-interval="3000">
-                    <a class="text-dark" href="/news/posts">ABC</a>
+                    <a class="text-dark" href="/news/posts/phones">ABC</a>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselHotNews" role="button" data-slide="prev">
@@ -159,7 +176,7 @@
     <!-- News grid -->
     <div id="gridNews" class="row">
         <div id="bigLeft" class="col pl-0">
-            <a href="/news/posts">
+            <a href="/news/posts/phones">
                 <figure>
                     <img src="/news/Demo-Pictures/iphone.jpg" alt="Error loading image">
                 </figure>
@@ -177,7 +194,7 @@
         </div>
         <div id="bigRight" class="col px-3">
             <div id="upRight" class="row">
-                <a href="/news/posts">
+                <a href="/news/posts/phones">
                     <figure>
                         <img src="/news/Demo-Pictures/google-pixel-3-01.jpg"
                             alt="Error loading image">
@@ -198,7 +215,7 @@
             </div>
             <div id="downRight" class="row">
                 <div id="smallLeft" class="col pl-0">
-                    <a href="/news/posts">
+                    <a href="/news/posts/laptops">
                         <figure>
                             <img src="/news/Demo-Pictures/hp-pavilion-gaming-laptop.jpg"
                                 alt="Error loading image">
@@ -213,7 +230,7 @@
                     </a>
                 </div>
                 <div id="smallRight" class="col pl-0">
-                    <a href="/news/posts">
+                    <a href="/news/posts/phones">
                         <figure>
                             <img src="/news/Demo-Pictures/google-company.jpeg"
                                 alt="Error loading image">
@@ -244,7 +261,7 @@
                         <li data-target="#news-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a href="/news/posts" class="carousel-item active" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item active" data-interval="4000">
                             <img src="/news/Demo-Pictures/news-001.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Tổng thống Venezuela thể hiện tình đoàn kết với tướng lĩnh</h5>
@@ -252,7 +269,7 @@
                                     màn thể hiện tình đoàn kết trên truyền...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/news-002.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>China is stealing tech to rapidly modernize its military, Pentagon warns</h5>
@@ -260,7 +277,7 @@
                                     military into a major global power ...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/news-003.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Trump admin seeking to get money to Venezuela's Guaido</h5>
@@ -290,7 +307,7 @@
                         <li data-target="#phones-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a href="/news/posts" class="carousel-item active" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item active" data-interval="4000">
                             <img src="/news/Demo-Pictures/iphone-01.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>New iPhone 11 release date, price, news and leaks</h5>
@@ -298,7 +315,7 @@
                                     testing out several new iPhone 2019 ...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/iphone-02.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>iPhone SE 2 release date, price & specs rumours</h5>
@@ -306,7 +323,7 @@
                                     tech specs, design, and new features ...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/iphone-03.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>iOS 13 release date & new features rumours</h5>
@@ -336,7 +353,7 @@
                         <li data-target="#laptops-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a href="/news/posts" class="carousel-item active" data-interval="4000">
+                        <a href="/news/posts/laptops" class="carousel-item active" data-interval="4000">
                             <img src="/news/Demo-Pictures/laptop-01.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>19 Best Android Games to Play On Your Chromebook</h5>
@@ -344,7 +361,7 @@
                                     options for Chrome OS laptops ...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/laptops" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/laptop-02.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Should I Buy a Chromebook? Buying Guide and Advice</h5>
@@ -352,7 +369,7 @@
                                     Chromebooks run Google's Chrome OS ...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/laptops" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/laptop-03.jpg" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Best Touch Screen Laptops of 2019</h5>
@@ -382,7 +399,7 @@
                         <li data-target="#technology-content-carousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <a href="/news/posts" class="carousel-item active" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item active" data-interval="4000">
                             <img src="/news/Demo-Pictures/tech-01.webp" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Tesla’s new safety features really push you to stay in your lane</h5>
@@ -390,7 +407,7 @@
                                     to stop you from drifting out of your lane...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/tech-02.webp" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Microsoft unveils HoloLens 2 developer edition for $3,500</h5>
@@ -398,7 +415,7 @@
                                     Priced at $3,500, it’s the exact same ...</p>
                             </div>
                         </a>
-                        <a href="/news/posts" class="carousel-item" data-interval="4000">
+                        <a href="/news/posts/phones" class="carousel-item" data-interval="4000">
                             <img src="/news/Demo-Pictures/tech-03.webp" alt="Error loading image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Adobe tests doubling the price of its Lightroom and Photoshop plan</h5>
@@ -530,19 +547,19 @@
 </div>
         <div class="view-type fixed-bottom">
     <div class="btn-group" role="group" aria-label="Basic example">
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Normal user">
+        <a href="?type=reader" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Normal user">
             <i class="fas fa-users text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Premium user">
+        <a href="?type=premium" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Premium user">
             <i class="fas fa-star text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Writter user">
+        <a onclick="writterMode()" href="#" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Writter user">
             <i class="fas fa-pen text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Editor user">
+        <a href="?type=editor" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Editor user">
             <i class="fas fa-edit text-light"></i>
         </a>
-        <a type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Admin">
+        <a href="?type=admin" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Admin">
             <i class="fas fa-users-cog text-light"></i>
         </a>
     </div>
